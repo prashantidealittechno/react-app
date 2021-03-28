@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before-install:
+  - docker build -t prashantidealittechno/react-app -f Dockerfile.dev .
+
+script:
+  - docker run prashantidealittechno/react-app npm run test -- --coverage
